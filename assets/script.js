@@ -6,18 +6,37 @@
 
 // const container = document.querySelector('.choice-container');
 // const questionEl = document.querySelector('.question');
-// const option1 = document.querySelector('#option1');
-// const option2 = document.querySelector('#option2');
-// const option3 = document.querySelector('#option3');
-// const option4 = document.querySelector('#option4');
+const option1 = document.getElementById('option1');
+const option2 = document.getElementById('option2');
+const option3 = document.getElementById('option3');
+const option4 = document.getElementById('option4');
+let choiceContainer = document.getElementById('choice-container');
+let container = document.getElementById('container');
 // const result = document.querySelector('.result');
 
 /* Above taken from Code Quiz assignment - might come in handy, will go back to that code for certain features if needed */
 
+
+
+function init() {
+  choiceContainer.style.display = 'none';
+  container.style.display = 'none'    
+  }
+
+
+
+
 function startQuiz() {
+  choiceContainer.style.display = 'block';
+  // show choices
+  // when choice is clicked points are added and next choices are displayed
+
 
 }
 
+function addPoint() {
+
+}
 
 function getRandom(arr) {
   let index = Math.floor(Math.random() * arr.length);
@@ -47,8 +66,14 @@ function getApi() {
 };
 
 
-getApi()  
+getApi(); 
 
 
 
 startBtn.addEventListener('click', startQuiz);
+option1.addEventListener('click', addPoint);
+option2.addEventListener('click', addPoint);
+option3.addEventListener('click', addPoint);
+option4.addEventListener('click', addPoint);
+
+init();
