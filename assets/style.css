@@ -85,12 +85,12 @@ h2 {
 
 /* User Choices classes */
 
-.img-container {
+.choice-container {
   max-width: 680px;
   margin: 20px auto;
 }
 
-.img-container::after {
+.choice-container::after {
   content: " ";
   display: block;
   clear: both;
