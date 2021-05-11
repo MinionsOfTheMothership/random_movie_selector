@@ -14,9 +14,44 @@
 
 /* Above taken from Code Quiz assignment - might come in handy, will go back to that code for certain features if needed */
 
+const genreScore = {
+  action: 0,
+  comedy: 0,
+  rom: 0,
+  horror: 0
+}
+
+$("#color1").on("click", function () {
+  genreScore.action += 1;
+  console.log(genreScore);
+})
+
+$("#color2").on("click", function () {
+  genreScore.comedy += 1;
+  console.log(genreScore);
+})
+
+$("#color3").on("click", function () {
+  genreScore.rom += 1;
+  console.log(genreScore);
+})
+
+$("#color4").on("click", function () {
+  genreScore.horror += 1;
+  console.log(genreScore);
+})
+
+function getFinalMovie() {
+  let moviePick = Object.keys(genreScore).reduce((a, b) => (genreScore[a] > genreScore[b]) ? a : b);
+  return moviePick;
+}
+
+// at the end callFinalMovie to get final score
+
 function startQuiz() {
 
 }
+
 
 
 function getRandom(arr) {
@@ -31,23 +66,23 @@ function getApi() {
   var requestUrl = 'https://api.themoviedb.org/3/discover/movie?api_key=38c9799f0d7e920347b58e9b9ccfea34&with_genres=14';
 
   fetch("https://api.themoviedb.org/3/discover/movie?api_key=38c9799f0d7e920347b58e9b9ccfea34&with_genres=14")
-  .then(response => response.json())
-  .then(data => {
+    .then(response => response.json())
+    .then(data => {
       let randomMovie = getRandom(data.results);
       let movieName = document.createElement('h1');
       movieName.textContent = randomMovie.title;
       container.appendChild(movieName);
       let moviePoster = document.createElement('img');
       moviePoster.setAttribute('src', `https://image.tmdb.org/t/p/original/${randomMovie['poster_path']}`);
-      container.appendChild(moviePoster);           
-       
-      
+      container.appendChild(moviePoster);
+
+
       console.log(randomMovie);
-  })
+    })
 };
 
 
-getApi()  
+getApi()
 
 
 
