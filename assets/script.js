@@ -1,71 +1,88 @@
-// let currentQuestion = 0;
-// let score = [];
-// let selectedAnswersData = [];
-// const totalQuestions = questions.length;
+let container = document.getElementById('container');
+let question = document.getElementById('question');
+let answer = document.getElementById('answer');
+let questionIndex = 0;
+let totalScore = 0;
+let genreId = 0;
 
+function getQuestion() {
+  let currentQuestion = questions[questionIndex];
+  question.textContent = currentQuestion.questionText;
+  answer.innerHTML = " ";
+  currentQuestion.options.forEach(option => {
+    let answerBtn = document.createElement("button"); //turn button into div, give class attribute 
+    answerBtn.textContent = option.choice;
+    answerBtn.setAttribute("value", option.choice);
+    answer.appendChild(answerBtn);
+    answerBtn.addEventListener("click", () => addToScore(option.score)
+    );
+  });
+};
 
-// const container = document.querySelector('.choice-container');
-// const questionEl = document.querySelector('.question');
-// const option1 = document.querySelector('#option1');
-// const option2 = document.querySelector('#option2');
-// const option3 = document.querySelector('#option3');
-// const option4 = document.querySelector('#option4');
-// const result = document.querySelector('.result');
-
-/* Above taken from Code Quiz assignment - might come in handy, will go back to that code for certain features if needed */
-
-const genreScore = {
-  action: 0,
-  comedy: 0,
-  rom: 0,
-  horror: 0
+function addToScore(choicePoints) {
+    questionIndex++;
+    totalScore = totalScore + choicePoints;
+     if (questionIndex < questions.length) {
+    getQuestion();
+  } else {
+    alert("nice");
+    console.log(totalScore);
+  }
 }
 
-$("#color1").on("click", function () {
-  genreScore.action += 1;
-  console.log(genreScore);
-})
+function moviePick() {
+  // get highest score
+  if (totalScore < 20) {
+    genreId = comedy
+  }
 
-$("#color2").on("click", function () {
-  genreScore.comedy += 1;
-  console.log(genreScore);
-})
+  if (totalScore < 123) {
+    genreId = horror
+  }
+  if (totalScore > 124 && totalScore < 500) {
+    genreId = romance
+  } 
+  
+  if (totalScore > 500 && totalScore > 1000) {
+    genreId = action
+  }
 
-$("#color3").on("click", function () {
-  genreScore.rom += 1;
-  console.log(genreScore);
-})
+  getApi()
 
-$("#color4").on("click", function () {
-  genreScore.horror += 1;
-  console.log(genreScore);
-})
+};
 
-function getFinalMovie() {
-  let moviePick = Object.keys(genreScore).reduce((a, b) => (genreScore[a] > genreScore[b]) ? a : b);
-  return moviePick;
+function init() {
+  quizInfo.style.display = 'block';
+  questionAreaEl.style.display = 'none';
+  questionText.style.display = 'none';
+  form.style.display = 'none';
 }
 
-// at the end callFinalMovie to get final score
-
+// Begins the quiz by loading the first question and possible answers and starting the timer//
 function startQuiz() {
-
+  quizInfo.style.display = 'none';
+  questionAreaEl.style.display = 'block';
+  questionText.style.display = 'block';
+  getQuestion();
+  startTimer();
+  if (startBtn.style.display === 'none') {
+    startBtn.style.display = 'block';
+  } else {
+    startBtn.style.display = 'none';
+  }
 }
-
-
 
 function getRandom(arr) {
   let index = Math.floor(Math.random() * arr.length);
   return arr[index];
-}
-
+};
 
 function getApi() {
 
   // fetch request gets a list of all the repos for the node.js organization
-  var requestUrl = 'https://api.themoviedb.org/3/discover/movie?api_key=38c9799f0d7e920347b58e9b9ccfea34&with_genres=14';
+  var requestUrl = `https://api.themoviedb.org/3/discover/movie?api_key=38c9799f0d7e920347b58e9b9ccfea34&with_genres=${genreId}`;
 
-  fetch("https://api.themoviedb.org/3/discover/movie?api_key=38c9799f0d7e920347b58e9b9ccfea34&with_genres=14")
+  fetch(requestUrl)
     .then(response => response.json())
     .then(data => {
       let randomMovie = getRandom(data.results);
@@ -81,9 +98,4 @@ function getApi() {
     })
 };
 
-
-getApi()
-
-
-
-startBtn.addEventListener('click', startQuiz);
+startBtn.addEventListener('click', getQuestion);
