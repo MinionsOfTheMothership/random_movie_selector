@@ -4,6 +4,14 @@ let answer = document.getElementById('answer');
 let questionIndex = 0;
 let totalScore = 0;
 let genreId = 0;
+let comedy = 35;
+let horror = 27;
+let sci_fi = 878;
+let action = 28;
+let drama = 18;
+let animation = 16;
+let romance = 10749;
+let fantasy = 14
 
 function getQuestion() {
   let currentQuestion = questions[questionIndex];
@@ -36,16 +44,35 @@ function moviePick() {
     genreId = comedy
   }
 
-  if (totalScore < 123) {
+  if (totalScore > 21 && totalScore < 30) {
     genreId = horror
   }
-  if (totalScore > 124 && totalScore < 500) {
-    genreId = romance
+  
+  if (totalScore > 31 && totalScore <= 40) {
+    genreId = sci_fi
   } 
   
-  if (totalScore > 500 && totalScore > 1000) {
+  if (totalScore > 41 && totalScore <= 50) {
     genreId = action
   }
+
+  if (totalScore > 51 && totalScore <= 60) {
+    genreId = drama
+  }
+  
+  if (totalScore > 61 && totalScore <= 70) {
+    genreId = animation
+  } 
+  
+  if (totalScore > 71 && totalScore <= 80) {
+    genreId = romance
+  }
+
+  if (totalScore > 81 && totalScore <= 90) {
+    genreId = fantasy
+  }
+
+
 
   getApi()
 
