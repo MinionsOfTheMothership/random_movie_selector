@@ -6,6 +6,14 @@ let answer = document.getElementById('answer');
 let questionIndex = 0;
 let totalScore = 0;
 let genreId = 0;
+let comedy = 35;
+let horror = 27;
+let sci_fi = 878;
+let action = 28;
+let drama = 18;
+let animation = 16;
+let romance = 10749;
+let fantasy = 14
 
 // API Movie Genre Index ID #s //
 
@@ -80,6 +88,23 @@ function moviePick() {
   if (totalScore > 81 && totalScore <= 90) {
     genreId = fantasy
   }
+
+  if (totalScore > 51 && totalScore <= 60) {
+    genreId = drama
+  }
+  
+  if (totalScore > 61 && totalScore <= 70) {
+    genreId = animation
+  } 
+  
+  if (totalScore > 71 && totalScore <= 80) {
+    genreId = romance
+  }
+
+  if (totalScore > 81 && totalScore <= 90) {
+    genreId = fantasy
+  }
+
 
   getApi()
 
