@@ -1,29 +1,30 @@
+
 const questions = [
     {
-      questionText: "What is your favorite color?",
+     questionText: "What color describes your mood?",
       options: [
-        { choice: "pink", score: 2 },
-        { choice: "green", score: 5 },
-        { choice: "yellow", score: 4 },
-        { choice: "lkajsdf", score: 90 }
+        { choice: "Hot-Pink", score: 5 },
+        { choice: "Green", score: 10 },
+        { choice: "Yellow", score: 20 },
+        { choice: "Aqua-Blue", score: 30 }
       ]
     },
     {
-      questionText: "What is your favorite city?",
+      questionText: "Choose a mythical creature!",
       options: [
-        { choice: "Chicago", score: 5 },
-        { choice: "Austin", score: 2 },
-        { choice: "New York", score: 1 },
-        { choice: "something", score: 670 }
-      ]
+        { choice: "Demon", score: 5 },
+        { choice: "Alien", score: 10 },
+        { choice: "Kraken", score: 20 },
+        { choice: "Mermaid", score: 30 }
+      ] 
     },
     {
-      questionText: "What is your favorite food?",
+      questionText: "What snack would you eat right NOW?",
       options: [
-        { choice: "Sushi", score: 3 },
-        { choice: "Pizza", score: 1 },
-        { choice: "Tacos", score: 4 },
-        { choice: "blasdfbl", score: 2350 }
+        { choice: "Twizzlers", score: 5 },
+        { choice: "Canned-Beans", score: 10 },
+        { choice: "Popcorn", score: 20 },
+        { choice: "Flaming-Hot-Cheetos", score: 29 }
       ]
     }
   ];
