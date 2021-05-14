@@ -28,7 +28,6 @@ function getQuestion() {
   answer.innerHTML = " ";
   currentQuestion.options.forEach(option => {
     let answerBtn = document.createElement("button"); 
-    answerBtn.textContent = option.choice;
     answerBtn.className = `choiceImg ${option.choice.toLowerCase()}`;
     answerBtn.setAttribute("value", option.choice);
     answer.appendChild(answerBtn);
