@@ -1,6 +1,7 @@
 let container = document.getElementById('container');
 let question = document.getElementById('question');
 let answer = document.getElementById('answer');
+let movieChoice = document.getElementById('movieChoice');
 let questionIndex = 0;
 let totalScore = 0;
 let genreId = 0;
@@ -78,6 +79,16 @@ function hideQuiz() {
   document.getElementById('container').style.display="none";
   document.getElementById('movieChoice').style.display="block";
 };
+
+
+function startQuiz() {
+  quizInfo.style.display = 'none';
+  questionAreaEl.style.display = 'block';
+  questionText.style.display = 'block';
+  getQuestion();
+  startTimer();
+}
+
 
 function getRandom(arr) {
   let index = Math.floor(Math.random() * arr.length);
