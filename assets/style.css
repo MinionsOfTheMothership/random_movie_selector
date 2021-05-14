@@ -13,9 +13,9 @@ box-sizing: border-box;
 body {
 font-family: sans-serif;
 background-color: var(--colorMain);
-background: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif);
-background: cover;
-}
+background: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif) no-repeat center center fixed;
+background-size: cover;
+  }
 
 
 /* Header classes */
@@ -223,11 +223,10 @@ transition: 0.3s;
 
 .movieName {
   color: white;
-  font-size: x-large;
+  font-size: xx-large;
   text-align: center;
   text-shadow:
   3px 3px 5px var(--colorThi);
-  margin-top: 100px;
 }
 
 .movieImg {
@@ -242,4 +241,12 @@ transition: 0.3s;
   border-color: var(--colorThi);
   box-shadow: 0 0px 22px 14px white;
   transition: 0.3s;
+}
+
+.movieDesc {
+  text-align: center;
+  color: var(--colorSec);
+  margin-left: 20%;
+  margin-right: 20%;
+  
 }

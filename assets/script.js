@@ -103,8 +103,12 @@ function getApi() {
     .then(response => response.json())
     .then(data => {
       let randomMovie = getRandom(data.results);
+      let movieChoiceIntro = document.createElement('h1');
+      movieChoiceIntro.textContent = "The movie that the Mothership has chosen is:"
+      movieChoice.appendChild(movieChoiceIntro);
+
       let movieName = document.createElement('h1');
-      movieName.textContent = `The movie that the Mothership has chosen is: ${randomMovie.title}`;
+      movieName.textContent = `${randomMovie.title}`;
       movieName.className = "movieName"
       movieChoice.appendChild(movieName);
       let movieDesc = document.createElement('h2');
