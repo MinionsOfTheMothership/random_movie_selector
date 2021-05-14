@@ -232,12 +232,7 @@ transition: 0.3s;
 
 .movieImg {
   display: block;
-  background-size: 100%;
-  align-items: center;
-  height: fit-content;
-  float: left;
   width: 50%;
-  height: 270px;
   margin-left: 25%;
   margin-right: 25%;
   margin-bottom: 5%;

@@ -15,17 +15,6 @@ let animation = 16;
 let romance = 10749;
 let fantasy = 14
 
-// API Movie Genre Index ID #s //
-
-let comedy = 35;
-let horror = 27;
-let sci_fi = 878;
-let action = 28;
-let drama = 18;
-let animation = 16;
-let romance = 10749;
-let fantasy = 14
-
 
 // Functions //
 
@@ -54,6 +43,7 @@ function addToScore(choicePoints) {
     console.log(totalScore);
     console.log(genreId)
     moviePick();
+    hideQuiz();
   }
 }
 
@@ -108,6 +98,10 @@ function moviePick() {
 
   getApi()
 
+};
+
+function hideQuiz() {
+  document.getElementById('container').style.display="none";
 };
 
 // function init() {
