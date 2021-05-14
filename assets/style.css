@@ -124,32 +124,22 @@ transition: 0.3s;
 }
 
 .hot-pink {
-  color: hotpink;
-  font-size: x-large;
   background-color: hotpink;
 }
 
 .green {
-  color: green;
-  font-size: x-large;
   background-color: green;
 }
 
 .yellow {
-  color: yellow;
-  font-size: x-large;
   background-color: yellow;
 }
 
 .aqua-blue {
-  color: aqua;
-  font-size: x-large;
   background-color: aqua;
 }
 
 .demon {
-  color: black;
-  text-align: right;
   background: url('./images/Creatures/demon.png') no-repeat;
   background-position: center;
   background-size: contain;
@@ -157,8 +147,6 @@ transition: 0.3s;
 }
 
 .alien {
-  color: black;
-  text-align: right;
   background: url('./images/Creatures/Alien.png') no-repeat;
   background-position: center;
   background-size: contain;
@@ -166,8 +154,6 @@ transition: 0.3s;
 }
 
 .kraken {
-  color: black;
-  text-align: right;
   background: url('./images/Creatures/Kraken.png') no-repeat;
   background-position: center;
   background-size: contain;
@@ -175,8 +161,6 @@ transition: 0.3s;
 }
 
 .mermaid {
-  color: black;
-  text-align: right;
   background: url('./images/Creatures/mermaid.png') no-repeat;
   background-position: center;
   background-size: contain;
@@ -184,8 +168,6 @@ transition: 0.3s;
 }
 
 .twizzlers {
-  color: black;
-  text-align: left;
   background: url('./images/Snacks/Twizzlers.png') no-repeat;
   background-position: center;
   background-size: contain;
@@ -193,7 +175,6 @@ transition: 0.3s;
 }
 
 .canned-beans {
-  color: black;
   background: url('./images/Snacks/Canned_beans.png') no-repeat;
   background-position: center;
   background-size: contain;
@@ -201,8 +182,6 @@ transition: 0.3s;
 }
 
 .popcorn {
-  color: black;
-  text-align: right;
   background: url('./images/Snacks/Popcorn.png') no-repeat;
   background-position: center;
   background-size: contain;
@@ -210,8 +189,6 @@ transition: 0.3s;
 }
 
 .flaming-hot-cheetos {
-  color: black;
-  text-align: right;
   background: url('./images/Snacks/flaming-hot-cheetos.png') no-repeat;
   background-position: center;
   background-size: contain;
