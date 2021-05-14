@@ -16,7 +16,14 @@ Live URL:
 
 Github URL:
 
+https://github.com/MinionsOfTheMothership/random_movie_selector
 
 
 
 Screenshots:
+
+![Here's a screenshot of the finished index page.](./assets/images/index-screenshot.png)
+
+![Here's a screenshot of the finished index page.](./assets/images/screenshot-of-answers.png)
+
+![Here's a screenshot of the finished index page.](./assets/images/fetched-movie-poster.png)
