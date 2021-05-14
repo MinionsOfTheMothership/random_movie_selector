@@ -106,7 +106,6 @@ function getApi() {
       let movieChoiceIntro = document.createElement('h1');
       movieChoiceIntro.textContent = "The movie that the Mothership has chosen is:"
       movieChoice.appendChild(movieChoiceIntro);
-
       let movieName = document.createElement('h1');
       movieName.textContent = `${randomMovie.title}`;
       movieName.className = "movieName"
