@@ -3,20 +3,10 @@
 let container = document.getElementById('container');
 let question = document.getElementById('question');
 let answer = document.getElementById('answer');
+let movieChoice = document.getElementById('movieChoice');
 let questionIndex = 0;
 let totalScore = 0;
 let genreId = 0;
-let comedy = 35;
-let horror = 27;
-let sci_fi = 878;
-let action = 28;
-let drama = 18;
-let animation = 16;
-let romance = 10749;
-let fantasy = 14
-
-// API Movie Genre Index ID #s //
-
 let comedy = 35;
 let horror = 27;
 let sci_fi = 878;
@@ -40,8 +30,8 @@ function getQuestion() {
     answerBtn.className = `choiceImg ${option.choice.toLowerCase()}`;
     answerBtn.setAttribute("value", option.choice);
     answer.appendChild(answerBtn);
-    answerBtn.addEventListener("click", () => addToScore(option.score)
-    );
+    answerBtn.addEventListener("click", () => addToScore(option.score));
+    document.getElementById('startBtn').style.display="none";
   });
 };
 
@@ -54,6 +44,7 @@ function addToScore(choicePoints) {
     console.log(totalScore);
     console.log(genreId)
     moviePick();
+    hideQuiz();
   }
 }
 
@@ -110,6 +101,10 @@ function moviePick() {
 
 };
 
+function hideQuiz() {
+  document.getElementById('container').style.display="none";
+};
+
 // function init() {
 //   quizInfo.style.display = 'block';
 //   questionAreaEl.style.display = 'none';
@@ -124,11 +119,6 @@ function startQuiz() {
   questionText.style.display = 'block';
   getQuestion();
   startTimer();
-  if (startBtn.style.display === 'none') {
-    startBtn.style.display = 'block';
-  } else {
-    startBtn.style.display = 'none';
-  }
 }
 
 function getRandom(arr) {
@@ -148,10 +138,10 @@ function getApi() {
       let movieName = document.createElement('h1');
       movieName.textContent = `The movie that the Mothership has chosen is: ${randomMovie.title}`;
       movieName.className = "movieName"
-      container.appendChild(movieName);
+      movieChoice.appendChild(movieName);
       let moviePoster = document.createElement('img');
       moviePoster.setAttribute('src', `https://image.tmdb.org/t/p/original/${randomMovie['poster_path']}`);
-      container.appendChild(moviePoster);
+      movieChoice.appendChild(moviePoster);
       moviePoster.className = "movieImg"
 
       // need to add classes to movie title & img //
